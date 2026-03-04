@@ -1,4 +1,4 @@
-import { Transaction } from "../model/Transaction"
+import type { Transaction } from "../interface/Transaction"
 
 export function TransactionItem({ transaction }: { transaction: Transaction }) {
     return (
