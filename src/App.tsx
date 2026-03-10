@@ -10,7 +10,7 @@ function App() {
     return (
         <>
             <Balance your_balance={balance} />
-            <TransactionList />
+            <TransactionList balance={balance} setBalance={setBalance} />
         </>
     )
 }
