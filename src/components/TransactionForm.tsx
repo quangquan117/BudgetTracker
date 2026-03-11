@@ -27,7 +27,7 @@ export function TransactionForm( {hidden, transactions, setTransactions, balance
 
     return (
         <div>
-            <h2>Add Transaction</h2>
+            <h2 hidden={hidden}>Add Transaction</h2>
             <form onSubmit={onsubmit} hidden={hidden}>
                 <div>
                     <label htmlFor="title">Title:</label>
