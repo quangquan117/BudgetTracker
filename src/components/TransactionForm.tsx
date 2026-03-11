@@ -1,7 +1,7 @@
 import type { Transaction } from "../interface/Transaction";
 
-export function TransactionForm( {hidden, transactions, setTransactions, balance, setBalance}: 
-    {hidden: boolean, transactions: Transaction[], setTransactions: React.Dispatch<React.SetStateAction<Transaction[]>>, balance: number, setBalance: React.Dispatch<React.SetStateAction<number>>} ) {
+export function TransactionForm( {hidden, transactions, setTransactions, balance, setBalance, setTransactionsToShow} : 
+    {hidden: boolean, transactions: Transaction[], setTransactions: React.Dispatch<React.SetStateAction<Transaction[]>>, balance: number, setBalance: React.Dispatch<React.SetStateAction<number>>, setTransactionsToShow: React.Dispatch<React.SetStateAction<Transaction[]>>} ) {
     const onsubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -22,6 +22,7 @@ export function TransactionForm( {hidden, transactions, setTransactions, balance
             setBalance(balance - newTransaction.amount);
         }
         setTransactions([...transactions, newTransaction]);
+        setTransactionsToShow([...transactions, newTransaction]);
         console.log(newTransaction);
     }    
 
